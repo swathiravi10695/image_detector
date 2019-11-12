@@ -1,0 +1,9 @@
+item {
+    id: 1
+    name: 'fresh_apple'
+}
+
+item {
+    id: 2
+    name: 'rotten_apple'
+}
