@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rottenapples</folder>
+	<filename>translation_Screen Shot 2018-06-07 at 2.45.44 PM.png</filename>
+	<path>C:\Users\sranjith\Downloads\rottenapples\rottenapples\translation_Screen Shot 2018-06-07 at 2.45.44 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>330</width>
+		<height>290</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rotten_apple</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>27</ymin>
+			<xmax>330</xmax>
+			<ymax>289</ymax>
+		</bndbox>
+	</object>
+</annotation>

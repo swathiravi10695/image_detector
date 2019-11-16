@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rottenoranges</folder>
+	<filename>Screen Shot 2018-06-12 at 11.24.51 PM.png</filename>
+	<path>C:\Users\pswaroop\Documents\images\rottenoranges\Screen Shot 2018-06-12 at 11.24.51 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>446</width>
+		<height>444</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rotten_oranges</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>4</xmin>
+			<ymin>9</ymin>
+			<xmax>397</xmax>
+			<ymax>444</ymax>
+		</bndbox>
+	</object>
+</annotation>

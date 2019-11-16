@@ -1,0 +1,26 @@
+<annotation>
+	<folder>freshapples</folder>
+	<filename>Screen Shot 2018-06-08 at 5.23.14 PM.png</filename>
+	<path>C:\Users\sranjith\Downloads\freshapples\Screen Shot 2018-06-08 at 5.23.14 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>182</width>
+		<height>188</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fresh_apple</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>11</xmin>
+			<ymin>12</ymin>
+			<xmax>153</xmax>
+			<ymax>159</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>rottenoranges</folder>
+	<filename>vertical_flip_Screen Shot 2018-06-12 at 11.40.18 PM.png</filename>
+	<path>C:\Users\pswaroop\Documents\images\rottenoranges\vertical_flip_Screen Shot 2018-06-12 at 11.40.18 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>452</width>
+		<height>406</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>rotten_oranges</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>29</xmin>
+			<ymin>4</ymin>
+			<xmax>436</xmax>
+			<ymax>406</ymax>
+		</bndbox>
+	</object>
+</annotation>

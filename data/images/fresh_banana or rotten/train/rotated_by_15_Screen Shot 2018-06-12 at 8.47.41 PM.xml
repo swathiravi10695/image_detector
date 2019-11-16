@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images for training</folder>
+	<filename>rotated_by_15_Screen Shot 2018-06-12 at 8.47.41 PM.png</filename>
+	<path>/home/sylvester/Desktop/images for training/rotated_by_15_Screen Shot 2018-06-12 at 8.47.41 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>682</width>
+		<height>466</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Rotten Banana</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8</xmin>
+			<ymin>82</ymin>
+			<xmax>652</xmax>
+			<ymax>433</ymax>
+		</bndbox>
+	</object>
+</annotation>

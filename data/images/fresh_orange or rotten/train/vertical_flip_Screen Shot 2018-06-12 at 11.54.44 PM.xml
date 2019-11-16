@@ -1,0 +1,26 @@
+<annotation>
+	<folder>freshoranges</folder>
+	<filename>vertical_flip_Screen Shot 2018-06-12 at 11.54.44 PM.png</filename>
+	<path>C:\Users\pswaroop\Documents\images\freshoranges\vertical_flip_Screen Shot 2018-06-12 at 11.54.44 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>364</width>
+		<height>348</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fresh_oranges</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>16</xmin>
+			<ymin>26</ymin>
+			<xmax>327</xmax>
+			<ymax>332</ymax>
+		</bndbox>
+	</object>
+</annotation>

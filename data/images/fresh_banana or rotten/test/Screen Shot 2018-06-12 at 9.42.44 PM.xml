@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images for training</folder>
+	<filename>Screen Shot 2018-06-12 at 9.42.44 PM.png</filename>
+	<path>C:\Users\Sylvester Ranjith\Desktop\images for training\Screen Shot 2018-06-12 at 9.42.44 PM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>392</width>
+		<height>408</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Fresh Banana</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>26</xmin>
+			<ymin>1</ymin>
+			<xmax>383</xmax>
+			<ymax>408</ymax>
+		</bndbox>
+	</object>
+</annotation>

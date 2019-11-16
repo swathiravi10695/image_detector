@@ -1,0 +1,26 @@
+<annotation>
+	<folder>freshoranges</folder>
+	<filename>translation_Screen Shot 2018-06-13 at 12.07.39 AM.png</filename>
+	<path>C:\Users\pswaroop\Documents\images\freshoranges\translation_Screen Shot 2018-06-13 at 12.07.39 AM.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>694</width>
+		<height>448</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fresh_oranges</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>64</xmin>
+			<ymin>43</ymin>
+			<xmax>684</xmax>
+			<ymax>447</ymax>
+		</bndbox>
+	</object>
+</annotation>
