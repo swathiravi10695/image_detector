@@ -138,7 +138,7 @@ class Ui_MainWindow(QObject):
         self.select_object.setItemText(1, _translate("MainWindow", "Rotten/Fresh Oranges"))
         self.select_object.setItemText(2, _translate("MainWindow", "Rotten/Fresh Bananas"))
         self.select_object.setItemText(3, _translate("MainWindow", "Cars"))
-        self.select_object.setItemText(4, _translate("MainWindow", "Breed of Dogs"))
+        self.select_object.setItemText(4, _translate("MainWindow", "Cats or Dogs"))
         self.select_object.setItemText(5, _translate("MainWindow", "LiveCam"))
         self.select_object.setItemText(6, _translate("MainWindow", "LiveCam/RandomObjects"))
         self.select_object.setItemText(7, _translate("MainWindow", "LiveCam/FaceDetect"))
@@ -407,8 +407,6 @@ class Ui_MainWindow(QObject):
             category_index = label_map_util.create_category_index(categories) 
             image_path = self.file_path.text()
             image = Image.open(image_path)
-            # the array based representation of the image will be used later in order to prepare the
-            # result image with boxes and labels on it.
             image_np = self.load_image_into_numpy_array(image)
             # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
             image_np_expanded = np.expand_dims(image_np, axis=0)
@@ -477,7 +475,7 @@ class Ui_MainWindow(QObject):
                     num_detections = detection_graph.get_tensor_by_name('num_detections:0')
                     (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
                     vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
-                    cv2.imshow('LiveCam', cv2.resize(image_np, (800, 600)))
+                    cv2.imshow('LiveCam', cv2.resize(image_np, (360, 240)))
                     if cv2.waitKey(25) & 0xFF == ord('q'):
                         cv2.destroyAllWindows()
                         break
@@ -524,7 +522,7 @@ class Ui_MainWindow(QObject):
                     num_detections = detection_graph.get_tensor_by_name('num_detections:0')
                     (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
                     vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
-                    cv2.imshow('Random Objects', cv2.resize(image_np, (800, 600)))
+                    cv2.imshow('Random Objects', cv2.resize(image_np, (480, 360)))
                     if cv2.waitKey(25) & 0xFF == ord('q'):
                         cv2.destroyAllWindows()
                         break
@@ -571,7 +569,7 @@ class Ui_MainWindow(QObject):
                     num_detections = detection_graph.get_tensor_by_name('num_detections:0')
                     (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
                     vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
-                    cv2.imshow('Faces', cv2.resize(image_np, (800, 600)))
+                    cv2.imshow('Faces', cv2.resize(image_np, (360, 240)))
                     if cv2.waitKey(25) & 0xFF == ord('q'):
                         cv2.destroyAllWindows()
                         break   
@@ -599,7 +597,7 @@ class Ui_MainWindow(QObject):
                 self.detect_bananas()
             elif str(self.select_object.currentText()) == "Cars":
                 self.detect_cars()
-            elif str(self.select_object.currentText()) == "Breed of Dogs": 
+            elif str(self.select_object.currentText()) == "Cats or Dogs": 
                 self.detect_dogs() 
                 
                                                               
