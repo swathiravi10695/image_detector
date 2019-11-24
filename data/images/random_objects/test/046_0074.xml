@@ -1,0 +1,26 @@
+<annotation>
+	<folder>046.computer-monitor</folder>
+	<filename>046_0074.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\046.computer-monitor\046_0074.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>266</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pc_monitor</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>238</xmin>
+			<ymin>126</ymin>
+			<xmax>379</xmax>
+			<ymax>266</ymax>
+		</bndbox>
+	</object>
+</annotation>

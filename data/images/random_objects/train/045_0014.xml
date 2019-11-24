@@ -1,0 +1,26 @@
+<annotation>
+	<folder>045.computer-keyboard</folder>
+	<filename>045_0014.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\045.computer-keyboard\045_0014.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>554</width>
+		<height>302</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>calculator</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>11</xmin>
+			<ymin>42</ymin>
+			<xmax>528</xmax>
+			<ymax>299</ymax>
+		</bndbox>
+	</object>
+</annotation>

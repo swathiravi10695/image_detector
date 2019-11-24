@@ -1,0 +1,26 @@
+<annotation>
+	<folder>027.calculator</folder>
+	<filename>027_0035.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\027.calculator\027_0035.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>144</width>
+		<height>180</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>calculator</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>54</ymin>
+			<xmax>138</xmax>
+			<ymax>180</ymax>
+		</bndbox>
+	</object>
+</annotation>

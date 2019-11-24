@@ -1,0 +1,26 @@
+<annotation>
+	<folder>240.watch-101</folder>
+	<filename>240_0104.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\240.watch-101\240_0104.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>300</width>
+		<height>238</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>watch</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>3</ymin>
+			<xmax>297</xmax>
+			<ymax>226</ymax>
+		</bndbox>
+	</object>
+</annotation>

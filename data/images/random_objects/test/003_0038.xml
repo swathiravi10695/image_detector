@@ -1,0 +1,26 @@
+<annotation>
+	<folder>003.backpack</folder>
+	<filename>003_0038.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\003.backpack\003_0038.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>397</width>
+		<height>587</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>backpack</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>208</xmin>
+			<ymin>210</ymin>
+			<xmax>362</xmax>
+			<ymax>459</ymax>
+		</bndbox>
+	</object>
+</annotation>

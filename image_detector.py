@@ -59,6 +59,9 @@ class Ui_MainWindow(QObject):
         self.select_object.addItem("")
         self.select_object.addItem("")
         self.select_object.addItem("")
+        self.select_object.addItem("")
+        self.select_object.addItem("")
+        self.select_object.addItem("")
         self.horizontalLayout.addWidget(self.select_object)
         self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
@@ -138,6 +141,9 @@ class Ui_MainWindow(QObject):
         self.select_object.setItemText(2, _translate("MainWindow", "Rotten/Fresh Bananas"))
         self.select_object.setItemText(3, _translate("MainWindow", "Cars"))
         self.select_object.setItemText(4, _translate("MainWindow", "Breed of Dogs"))
+        self.select_object.setItemText(5, _translate("MainWindow", "LiveCam"))
+        self.select_object.setItemText(6, _translate("MainWindow", "LiveCam/RandomObjects"))
+        self.select_object.setItemText(7, _translate("MainWindow", "LiveCam/FaceDetect"))
         self.label_2.setText(_translate("MainWindow", "Choose Image:"))
         self.browse_button.setShortcut(_translate("MainWindow", "Ctrl+B"))
         self.process_button.setText(_translate("MainWindow", "Process"))
@@ -373,11 +379,9 @@ class Ui_MainWindow(QObject):
             image_np= cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)    
             cv2.imshow(image_path.split('/')[-1],image_np) 
         except Exception as e:
-            print("Please select another image because the current image gives an irregular array shape",e) 
-               
-    @pyqtSlot()
-    def detect_cars(self):
-        print("Cars called") 
+            print("Please select another image because the current image gives an irregular array shape",e)             
+
+
     @pyqtSlot()
     def detect_dogs(self):
         print("Dogs called") 
@@ -426,7 +430,27 @@ class Ui_MainWindow(QObject):
             cv2.imshow(image_path.split('/')[-1],image_np) 
         except Exception as e:
             print("Please select another image because the current image gives an irregular array shape",e)              
+    
 
+
+    @pyqtSlot()
+    def detect_cars(self):
+        print("Cars called")
+
+    
+    @pyqtSlot()
+    def live_cam(self):
+        print("liveCam Called")
+    
+    @pyqtSlot()
+    def live_cam_random(self):
+        print("liveCam/Random Called") 
+    
+    @pyqtSlot()
+    def live_cam_faces(self):
+        print("liveCam/Faces Called")       
+    
+    
     @pyqtSlot()
     def process(self):
         if str(self.file_path.text()) == "":
@@ -441,7 +465,14 @@ class Ui_MainWindow(QObject):
             elif str(self.select_object.currentText()) == "Cars":
                 self.detect_cars()
             elif str(self.select_object.currentText()) == "Breed of Dogs": 
-                self.detect_dogs()                                          
+                self.detect_dogs() 
+            elif str(self.select_object.currentText()) == "LiveCam": 
+                self.live_cam()    
+            elif str(self.select_object.currentText()) == "LiveCam/RandomObjects":
+                self.live_cam_random()
+            elif str(self.select_object.currentText()) == "LiveCam/FaceDetect":
+                self.live_cam_faces()    
+                                                              
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

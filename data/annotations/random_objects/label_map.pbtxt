@@ -1,0 +1,34 @@
+item {
+    id: 1
+    name: 'Female'
+}
+
+item {
+    id: 2
+    name: 'Male'
+}
+
+item {
+    id: 3
+    name: 'backpack'
+}
+
+item {
+    id: 4
+    name: 'calculator'
+}
+
+item {
+    id: 5
+    name: 'computer_mouse'
+}
+
+item {
+    id: 6
+    name: 'pc_monitor'
+}
+
+item {
+    id: 7
+    name: 'watch'
+}

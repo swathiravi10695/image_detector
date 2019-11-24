@@ -1,0 +1,26 @@
+<annotation>
+	<folder>253.faces-easy-101</folder>
+	<filename>253_0230.jpg</filename>
+	<path>K:\Data\253.faces-easy-101\253_0230.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>274</width>
+		<height>344</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Male</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>15</xmin>
+			<ymin>16</ymin>
+			<xmax>254</xmax>
+			<ymax>338</ymax>
+		</bndbox>
+	</object>
+</annotation>

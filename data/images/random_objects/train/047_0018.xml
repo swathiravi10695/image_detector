@@ -1,0 +1,26 @@
+<annotation>
+	<folder>047.computer-mouse</folder>
+	<filename>047_0018.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\047.computer-mouse\047_0018.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>200</width>
+		<height>164</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>computer_mouse</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>18</xmin>
+			<ymin>32</ymin>
+			<xmax>128</xmax>
+			<ymax>113</ymax>
+		</bndbox>
+	</object>
+</annotation>
