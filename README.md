@@ -1,4 +1,4 @@
-# catsvsdogs_imageclassifier
+# image_Detector
 
 
 A simple image classification project that utilises tensorflow object detection api  to predict if provided image belongs to
