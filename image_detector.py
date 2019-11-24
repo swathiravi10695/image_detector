@@ -21,8 +21,6 @@ from object_detection.utils import visualization_utils as vis_util
 import cv2  
 
 
-
-
 class Ui_MainWindow(QObject):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -437,24 +435,161 @@ class Ui_MainWindow(QObject):
     def detect_cars(self):
         print("Cars called")
 
-    
     @pyqtSlot()
     def live_cam(self):
         print("liveCam Called")
+        label_map_pbtxt_fname = './data/annotations/live/label_map.pbtxt'
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        pb_fname = './assets/inference_graphs/live/live_graph.pb'
+        PATH_TO_CKPT = pb_fname
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        NUM_CLASSES = self.get_num_classes(label_map_pbtxt_fname)
+        assert os.path.isfile(pb_fname)
+        assert os.path.isfile(PATH_TO_LABELS)
+        detection_graph = tf.Graph()
+        with detection_graph.as_default():
+            od_graph_def = tf.GraphDef()
+            with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+                serialized_graph = fid.read()
+                od_graph_def.ParseFromString(serialized_graph)
+                tf.import_graph_def(od_graph_def, name='') 
+        try:        
+            label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
+            categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
+            category_index = label_map_util.create_category_index(categories)
+        except Exception as e:
+            print(e)        
+        try:           
+            cap = cv2.VideoCapture(0)
+        except Exception as e:
+             print("Problem with your web cam please check and restart application")
+             sys.exit(1)    
+        
+        with detection_graph.as_default():
+            with tf.Session(graph=detection_graph) as sess:
+                while True:
+                    ret, image_np = cap.read()
+                    image_np_expanded = np.expand_dims(image_np, axis=0)
+                    image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
+                    boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
+                    scores = detection_graph.get_tensor_by_name('detection_scores:0')
+                    classes = detection_graph.get_tensor_by_name('detection_classes:0')
+                    num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+                    (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
+                    vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
+                    cv2.imshow('LiveCam', cv2.resize(image_np, (800, 600)))
+                    if cv2.waitKey(25) & 0xFF == ord('q'):
+                        cv2.destroyAllWindows()
+                        break
     
     @pyqtSlot()
     def live_cam_random(self):
         print("liveCam/Random Called") 
+        label_map_pbtxt_fname = './data/annotations/random_objects/label_map.pbtxt'
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        pb_fname = './assets/inference_graphs/random_objects/random_objects_graph.pb'
+        PATH_TO_CKPT = pb_fname
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        NUM_CLASSES = self.get_num_classes(label_map_pbtxt_fname)
+        assert os.path.isfile(pb_fname)
+        assert os.path.isfile(PATH_TO_LABELS)
+        detection_graph = tf.Graph()
+        with detection_graph.as_default():
+            od_graph_def = tf.GraphDef()
+            with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+                serialized_graph = fid.read()
+                od_graph_def.ParseFromString(serialized_graph)
+                tf.import_graph_def(od_graph_def, name='') 
+        try:        
+            label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
+            categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
+            category_index = label_map_util.create_category_index(categories)
+        except Exception as e:
+            print(e)        
+        try:           
+            cap = cv2.VideoCapture(0)
+        except Exception as e:
+             print("Problem with your web cam please check and restart application")
+             sys.exit(1)    
+        
+        with detection_graph.as_default():
+            with tf.Session(graph=detection_graph) as sess:
+                while True:
+                    ret, image_np = cap.read()
+                    image_np_expanded = np.expand_dims(image_np, axis=0)
+                    image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
+                    boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
+                    scores = detection_graph.get_tensor_by_name('detection_scores:0')
+                    classes = detection_graph.get_tensor_by_name('detection_classes:0')
+                    num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+                    (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
+                    vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
+                    cv2.imshow('Random Objects', cv2.resize(image_np, (800, 600)))
+                    if cv2.waitKey(25) & 0xFF == ord('q'):
+                        cv2.destroyAllWindows()
+                        break
     
     @pyqtSlot()
     def live_cam_faces(self):
-        print("liveCam/Faces Called")       
+        print("liveCam/Faces Called")
+        label_map_pbtxt_fname = './data/annotations/faces/label_map.pbtxt'
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        pb_fname = './assets/inference_graphs/faces/face_detector_graph.pb'
+        PATH_TO_CKPT = pb_fname
+        PATH_TO_LABELS = label_map_pbtxt_fname
+        NUM_CLASSES = self.get_num_classes(label_map_pbtxt_fname)
+        assert os.path.isfile(pb_fname)
+        assert os.path.isfile(PATH_TO_LABELS)
+        detection_graph = tf.Graph()
+        with detection_graph.as_default():
+            od_graph_def = tf.GraphDef()
+            with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
+                serialized_graph = fid.read()
+                od_graph_def.ParseFromString(serialized_graph)
+                tf.import_graph_def(od_graph_def, name='') 
+        try:        
+            label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
+            categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
+            category_index = label_map_util.create_category_index(categories)
+        except Exception as e:
+            print(e)        
+        try:           
+            cap = cv2.VideoCapture(0)
+        except Exception as e:
+             print("Problem with your web cam please check and restart application")
+             sys.exit(1)    
+        
+        with detection_graph.as_default():
+            with tf.Session(graph=detection_graph) as sess:
+                while True:
+                    ret, image_np = cap.read()
+                    image_np_expanded = np.expand_dims(image_np, axis=0)
+                    image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
+                    boxes = detection_graph.get_tensor_by_name('detection_boxes:0')
+                    scores = detection_graph.get_tensor_by_name('detection_scores:0')
+                    classes = detection_graph.get_tensor_by_name('detection_classes:0')
+                    num_detections = detection_graph.get_tensor_by_name('num_detections:0')
+                    (boxes, scores, classes, num_detections) = sess.run([boxes, scores, classes, num_detections],feed_dict={image_tensor: image_np_expanded})
+                    vis_util.visualize_boxes_and_labels_on_image_array(image_np,np.squeeze(boxes),np.squeeze(classes).astype(np.int32),np.squeeze(scores),category_index,use_normalized_coordinates=True,line_thickness=8)
+                    cv2.imshow('Faces', cv2.resize(image_np, (800, 600)))
+                    if cv2.waitKey(25) & 0xFF == ord('q'):
+                        cv2.destroyAllWindows()
+                        break   
     
     
+
     @pyqtSlot()
     def process(self):
         if str(self.file_path.text()) == "":
             print("Please Select an image file")
+
+        elif str(self.file_path.text()) =="LiveCam":
+            if str(self.select_object.currentText()) == "LiveCam": 
+                self.live_cam()    
+            elif str(self.select_object.currentText()) == "LiveCam/RandomObjects":
+                self.live_cam_random()
+            elif str(self.select_object.currentText()) == "LiveCam/FaceDetect":
+                self.live_cam_faces()
         else:
             if str(self.select_object.currentText()) == "Rotten/Fresh Apples":
                 self.detect_apple()    
@@ -466,12 +601,7 @@ class Ui_MainWindow(QObject):
                 self.detect_cars()
             elif str(self.select_object.currentText()) == "Breed of Dogs": 
                 self.detect_dogs() 
-            elif str(self.select_object.currentText()) == "LiveCam": 
-                self.live_cam()    
-            elif str(self.select_object.currentText()) == "LiveCam/RandomObjects":
-                self.live_cam_random()
-            elif str(self.select_object.currentText()) == "LiveCam/FaceDetect":
-                self.live_cam_faces()    
+                
                                                               
 
 if __name__ == "__main__":
