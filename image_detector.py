@@ -19,6 +19,9 @@ from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 import cv2  
+import shortcuts as sh
+import about_ui as about
+import webbrowser
 
 
 class Ui_MainWindow(QObject):
@@ -113,12 +116,16 @@ class Ui_MainWindow(QObject):
         MainWindow.setStatusBar(self.statusbar)
         self.actionClose = QtWidgets.QAction(MainWindow)
         self.actionClose.setObjectName("actionClose")
+        self.actionClose.triggered.connect(self.close)
         self.actionAbout = QtWidgets.QAction(MainWindow)
         self.actionAbout.setObjectName("actionAbout")
+        self.actionAbout.triggered.connect(self.About)
         self.actionHelp = QtWidgets.QAction(MainWindow)
         self.actionHelp.setObjectName("actionHelp")
+        self.actionHelp.triggered.connect(self.open_help)
         self.actionShortcuts = QtWidgets.QAction(MainWindow)
         self.actionShortcuts.setObjectName("actionShortcuts")
+        self.actionShortcuts.triggered.connect(self.shortcut)
         self.menuFile.addAction(self.actionClose)
         self.menuHelp.addAction(self.actionAbout)
         self.menuHelp.addAction(self.actionHelp)
@@ -237,6 +244,24 @@ class Ui_MainWindow(QObject):
         buttonReply = QMessageBox.question(None, 'Confirm', "Are you sure you want to close?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if buttonReply == QMessageBox.Yes:
             sys.exit(1)
+    
+    
+    @pyqtSlot()
+    def shortcut(self):
+        Dialog = QtWidgets.QDialog(None, QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowTitleHint)
+        window = sh.Ui_ShortcutsWindow()
+        window.setupUi(Dialog)
+        Dialog.exec_()   
+    @pyqtSlot()
+    def About(self):
+        Dialog = QtWidgets.QDialog(None, QtCore.Qt.WindowCloseButtonHint | QtCore.Qt.WindowTitleHint)
+        window = about.Ui_About()
+        window.setupUi(Dialog)
+        Dialog.exec_()
+    @pyqtSlot()
+    def open_help(self):
+        webbrowser.open("README.md")    
+
     @pyqtSlot()
     def detect_apple(self):
         try:
