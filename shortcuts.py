@@ -160,6 +160,6 @@ class Ui_ShortcutsWindow(object):
         item = self.tableWidget.item(7, 0)
         item.setText(_translate("ShortcutsWindow", "Quit OpenCV Window"))
         item = self.tableWidget.item(7, 1)
-        item.setText(_translate("ShortcutsWindow", "Esc"))
+        item.setText(_translate("ShortcutsWindow", "Q"))
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
