@@ -1,0 +1,26 @@
+<annotation>
+	<folder>127.laptop-101</folder>
+	<filename>127_0123.jpg</filename>
+	<path>C:\Users\pswaroop\Pictures\Dataset\127.laptop-101\127_0123.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>300</width>
+		<height>288</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>laptop</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>33</xmin>
+			<ymin>18</ymin>
+			<xmax>271</xmax>
+			<ymax>274</ymax>
+		</bndbox>
+	</object>
+</annotation>

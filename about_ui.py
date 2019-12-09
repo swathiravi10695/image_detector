@@ -54,9 +54,7 @@ class Ui_About(object):
 "5.Numpy \n"
 "\n"
 "\n"
-"---------- Developer---------------------------------\n"
-"Swathi Korrapatti\n"
-"All credits go to the developers of TensorFlow Object Detection API"
-
-
+"---------- Submitted by---------------------------------\n"
+"Swathi Korrapatti - 8667968\n"
+"Chandrashekar Katherashala - 8641849"
 ))
